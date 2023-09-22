@@ -1,8 +1,14 @@
 const mongoose=require("mongoose")
 const kidProductSchema=mongoose.Schema({
     file:{
-        type:String,
-        required:true
+        path:{
+            type:String,
+            required:true
+        },
+        filename:{
+            type:String,
+            required:true
+        }
     },
     title:{
         type:String,

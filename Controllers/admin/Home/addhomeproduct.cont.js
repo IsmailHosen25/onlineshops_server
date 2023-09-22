@@ -1,14 +1,16 @@
 const productmodel=require('../../../models/admin/homeproduct.mod')
 const addhomeproduct=async(req,res)=>{
           try{
-               const {title,price,code}=req.body
-               const path=req.file.path
-               console.log(req.body)
-               console.log(path)
+               const {title,price,code,catagory}=req.body
+               const {path,filename}=req.file
                const validcode=await productmodel.findOne({code:code})
                if(validcode===null){
                 const newproduct= productmodel({
-                  file:path,
+                  file:{
+                    path:path,
+                    filename:filename
+                  },
+                  catagory: catagory,
                   title:title,
                   price:price,
                   code:code

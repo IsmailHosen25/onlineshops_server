@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use("/admin",adminrouter)
 app.use("/user",userRouter)
-app.use("/", getproduct)
+app.use("/product", getproduct)
 
 app.use((errors,req,res,next)=>{
     if(errors.message){

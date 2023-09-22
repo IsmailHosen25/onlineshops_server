@@ -2,11 +2,14 @@ const womenproductmodel=require("../../../models/admin/womenproduct.mod")
 const addwomenproduct= async(req,res)=>{
          try{
             const {title,price,code}=req.body
-            const path=req.file.path
+            const {path,filename}=req.file
             const validcode=await womenproductmodel.findOne({code:code})
             if(validcode===null){
                      const newproduct= new womenproductmodel({
-                        file:path,
+                        file:{
+                           path:path,
+                           filename:filename
+                        },
                         title:title,
                         price:price,
                         code:code

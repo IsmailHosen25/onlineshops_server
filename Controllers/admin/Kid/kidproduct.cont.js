@@ -2,11 +2,14 @@ const kidproductmodel=require("../../../models/admin/kidproduct.mod")
 const kidmenproduct= async(req,res)=>{
          try{
             const {title,price,code}=req.body
-            const path=req.file.path
+            const {path,filename}=req.file
             const validcode=await kidproductmodel.findOne({code:code})
             if(validcode===null){
                      const newproduct= new kidproductmodel({
-                        file:path,
+                        file:{
+                           path:path,
+                           filename:filename
+                        },
                         title:title,
                         price:price,
                         code:code

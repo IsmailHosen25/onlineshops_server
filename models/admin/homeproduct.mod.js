@@ -1,6 +1,16 @@
 const mongoose =require("mongoose")
 const productShema=new mongoose.Schema({
     file:{
+        path:{
+            type:String,
+        }
+        ,
+        filename:{
+                type:String,
+            }
+
+    },
+    catagory:{
         type:String,
         required:true
     },

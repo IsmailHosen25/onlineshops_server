@@ -22,7 +22,7 @@ const deletekidproduct =require("../Controllers/admin/Kid/deletekidproduct.cont"
 
 
 
-adminrouter.post("/addhomeproducts", adminjwtcheck,uploadimg.single("avatar"),addhomeproduct)
+adminrouter.post("/addhomeproducts",adminjwtcheck,uploadimg.single("file"),addhomeproduct)
 adminrouter.put("/udthomeproduct",adminjwtcheck,uploadimg.single("file"),udthomeproduct)
 adminrouter.delete("/deletehomeproducts",adminjwtcheck,deletehomeproduct)
 

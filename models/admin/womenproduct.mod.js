@@ -2,8 +2,14 @@ const { text } = require("express")
 const mongoose=require("mongoose")
 const womenProductSchema=mongoose.Schema({
     file:{
-        type:String,
-        required:true
+        path:{
+            type:String,
+            required:true
+        },
+        filename:{
+            type:String,
+            required:true
+        }
     },
     title:{
         type:String,

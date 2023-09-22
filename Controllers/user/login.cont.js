@@ -23,8 +23,9 @@ const login=async(req,res)=>{
                            admin:true,
                            username:validuser.username
                         }
-                        const token=jwt.sign(payload,process.env.AdminJwt,{expiresIn:"12h"})
-                        res.cookie("token",token).json({"message":"accepted"})
+                        const token=jwt.sign(payload,process.env.ADMINJWT,{expiresIn:"4h"})
+                        res.cookie("token",token).json({"message":"admin"})
+                        res.end()
                      }
                      else{
                         res.json({"message":"Not athurizrd"})
@@ -34,7 +35,7 @@ const login=async(req,res)=>{
                      const passwordvalid= await bcrypt.compare(password,validuser.password)
                      if(passwordvalid){
                         const token =JwtToken(validuser.username,validuser.number_email)
-                        res.cookie("token",token)
+                        res.cookie("token",token).json({"message":"accepted"})
                         res.end()
                      }
                      else{
