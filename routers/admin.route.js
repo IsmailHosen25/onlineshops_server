@@ -24,22 +24,22 @@ const deletekidproduct =require("../Controllers/admin/Kid/deletekidproduct.cont"
 
 adminrouter.post("/addhomeproducts",adminjwtcheck,uploadimg.single("file"),addhomeproduct)
 adminrouter.put("/udthomeproduct",adminjwtcheck,uploadimg.single("file"),udthomeproduct)
-adminrouter.delete("/deletehomeproducts",adminjwtcheck,deletehomeproduct)
+adminrouter.delete("/deletehomeproducts/:code",adminjwtcheck,deletehomeproduct)
 
 
 adminrouter.post("/addmenproduct", adminjwtcheck,uploadimg.single("file"),addmenproduct)
 adminrouter.put("/updtmenproduct",adminjwtcheck,uploadimg.single("file"),updtmenproduct)
-adminrouter.delete("/deletemenproduct",adminjwtcheck,deletemenproduct)
+adminrouter.delete("/deletemenproduct/:code",adminjwtcheck,deletemenproduct)
 
 
 adminrouter.post("/addwomenproduct", adminjwtcheck,uploadimg.single("file"),addwomenproduct)
 adminrouter.put("/updtwomenproduct",adminjwtcheck,uploadimg.single("file"),updtwomenproduct)
-adminrouter.delete("/deletewomenproduct",adminjwtcheck,deletewomenproduct)
+adminrouter.delete("/deletewomenproduct/:code",adminjwtcheck,deletewomenproduct)
 
 
 adminrouter.post("/addkidproduct",adminjwtcheck,uploadimg.single("file"),addkidproduct)
 adminrouter.put("/updtkidproduct",adminjwtcheck,uploadimg.single("file"),updtkidproduct)
-adminrouter.delete("/deletekidproduct",adminjwtcheck,deletekidproduct)
+adminrouter.delete("/deletekidproduct/:code",adminjwtcheck,deletekidproduct)
 
 
 module.exports=adminrouter

@@ -20,7 +20,7 @@ const addhomeproduct=async(req,res)=>{
                 res.json({"message":"Accepted"})
                }
                else{
-                res.json({"message":"Alrady in data base"})
+                res.json({"message":"code is alrady exists"})
                }
 
           }catch(error){
